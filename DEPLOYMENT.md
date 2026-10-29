@@ -1,121 +1,77 @@
-# 🚀 Deployment Guide - AI Interview Coach
+# 🚀 Complete Deployment Guide - PrepSense AI
 
-This guide details how to deploy the **AI Interview Coach** so anyone around the world can use it on mobile, tablet, or desktop.
-
----
-
-## 🌟 Architecture Overview
-
-The app is built as a unified full-stack service:
-- **Frontend**: React + TailwindCSS + Framer Motion (Vite SPA)
-- **Backend**: FastAPI + Google Gemini 2.5/1.5 AI + Web Audio Analysis + PDF Parser
-- **Unified Server**: FastAPI serves the pre-built frontend distribution (`frontend/dist`) as a single unified service. No separate frontend hosting is required!
+PrepSense AI is built as a **fully self-contained, single-server web application**. The FastAPI backend automatically serves the high-performance compiled React frontend (`frontend/dist`), the SQLite database (`prepsense.db`), and the Gemini AI engine on a single unified port.
 
 ---
 
-## Option 1: 1-Click Free Cloud Deployment on Render (Recommended)
+## 🌐 Instant Options to Run & Share
 
-[Render](https://render.com) offers free cloud hosting for web services with automatic HTTPS.
-
-### Steps:
-1. **Push your code to GitHub:**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit of AI Interview Coach"
-   git remote add origin https://github.com/your-username/ai-interview-coach.git
-   git push -u origin main
-   ```
-
-2. **Create a Free Web Service on Render:**
-   - Go to [dashboard.render.com](https://dashboard.render.com) and click **New + > Web Service**.
-   - Select your GitHub repository.
-   - Configure the following settings:
-     - **Name**: `ai-interview-coach`
-     - **Region**: Closest to you (e.g. Frankfurt, Oregon, Singapore)
-     - **Branch**: `main`
-     - **Root Directory**: *(leave blank)*
-     - **Runtime**: `Python 3`
-     - **Build Command**:
-       ```bash
-       pip install -r requirements.txt && cd frontend && npm install && npm run build
-       ```
-     - **Start Command**:
-       ```bash
-       python backend/main.py
-       ```
-     - **Instance Type**: `Free`
-
-3. **Add Environment Variables:**
-   Under **Environment Variables**, add:
-   - `GEMINI_API_KEY`: *(Your Google AI Studio Gemini API key)*
-   - `PORT`: `10000`
-   - `HOST`: `0.0.0.0`
-
-4. **Click "Deploy Web Service"**:
-   - Render will build the React frontend, install dependencies, and start the server.
-   - In 2–3 minutes, your live URL will be active: `https://ai-interview-coach.onrender.com`!
+### Option A: Live on Local Wi-Fi (Instant Demo for Viva / Lab)
+If you are presenting to teachers or classmates on the same Wi-Fi network:
+- **Your Local Machine URL:** [http://localhost:8000](http://localhost:8000)
+- **Live Phone / Tablet / Evaluator Link:** `http://192.168.12.56:8000`
+*(Anyone connected to your Wi-Fi or mobile hotspot can type `http://192.168.12.56:8000` into their mobile browser to take a live mock interview!)*
 
 ---
 
-## Option 2: Docker Deployment (Railway, Fly.io, or AWS)
+### Option B: Permanent 24/7 Cloud Deployment on Render.com (100% Free)
 
-A production-ready `Dockerfile` is included in the project.
+Render provides free cloud hosting with a permanent HTTPS domain (`https://prepsense-ai.onrender.com`) that never sleeps while active.
 
-### Deploying to Railway.app:
-1. Sign up at [railway.app](https://railway.app).
-2. Click **New Project** > **Deploy from GitHub repo**.
-3. Railway automatically detects the `Dockerfile` and builds both frontend and backend.
-4. In Railway variables, add `GEMINI_API_KEY`.
-5. Under Settings > Networking, click **Generate Domain**.
-6. Your app is live!
+#### Step 1: Create your GitHub Repository
+1. Open your browser and go to: **[https://github.com/new](https://github.com/new)**
+2. Set **Repository name**: `prepsense-ai`
+3. Set visibility to **Public**
+4. **Important**: Leave "Add a README file" **unchecked** (we already have a complete repo ready).
+5. Click **Create repository**.
 
-### Deploying to Fly.io:
-```bash
-fly launch
-fly secrets set GEMINI_API_KEY="your-api-key"
-fly deploy
+#### Step 2: Push your Code with 1-Click
+Simply double-click:
+👉 `push_to_github.bat` in your project folder!
+
+*(Or run in PowerShell / Command Prompt):*
+```powershell
+git push -u origin main
 ```
+Your entire code, frontend build, database, and configurations will be uploaded to:
+`https://github.com/BhumikaSR9/prepsense-ai`
+
+#### Step 3: Deploy on Render in 2 Minutes
+1. Go to **[https://dashboard.render.com](https://dashboard.render.com)** and sign in with GitHub.
+2. Click **New +** (top right) ➔ **Web Service**.
+3. Select your repository: **`BhumikaSR9/prepsense-ai`**.
+4. Render automatically reads our [`render.yaml`](file:///c:/Users/Bhumika/OneDrive/Desktop/python%20project/render.yaml) configuration:
+   - **Name:** `prepsense-ai`
+   - **Runtime:** `Python 3`
+   - **Build Command:** `pip install -r requirements.txt`
+   - **Start Command:** `python backend/main.py`
+   - **Plan:** `Free`
+5. Under **Environment Variables**, click **Add Environment Variable**:
+   - Key: `GEMINI_API_KEY`
+   - Value: `your_gemini_api_key_here` *(copy value from your local backend/.env)*
+6. Click **Deploy Web Service**!
+
+Render will build the app and give you a public URL like:
+👉 **`https://prepsense-ai.onrender.com`**
 
 ---
 
-## Option 3: Hugging Face Spaces (100% Free Docker Hosting)
+### Option C: 1-Click Deploy on Railway.app (Instant Docker)
 
-1. Go to [Hugging Face Spaces](https://huggingface.co/spaces) and click **Create new Space**.
-2. Select **Docker** as the Space SDK.
-3. Push your repository to the Hugging Face Git remote.
-4. In Space Settings > **Variables and secrets**, add your `GEMINI_API_KEY`.
-5. Hugging Face builds and hosts the app publicly with an embedded iframe or full page!
-
----
-
-## Option 4: Instant Public Access via Cloudflare Tunnel or Ngrok
-
-If you want to demo the app right now from your laptop to anyone on the internet:
-
-### Using Cloudflare Tunnel (Free & No account needed):
-```bash
-# In one terminal, start the app:
-python run.py
-
-# In another terminal:
-npx cloudflared tunnel --url http://localhost:8000
-```
-Cloudflare will give you a temporary public HTTPS link (e.g., `https://random-words.trycloudflare.com`) that anyone can open on their phone or computer!
-
-### Using Ngrok:
-```bash
-ngrok http 8000
-```
+Railway automatically detects our [`Dockerfile`](file:///c:/Users/Bhumika/OneDrive/Desktop/python%20project/Dockerfile):
+1. Sign in to **[Railway.app](https://railway.app)** with GitHub.
+2. Click **New Project** ➔ **Deploy from GitHub repo** ➔ Select `BhumikaSR9/prepsense-ai`.
+3. In Railway settings, add variable: `GEMINI_API_KEY`.
+4. Under **Networking**, click **Generate Public Domain**.
+5. Your live app is ready at: `https://prepsense-ai.up.railway.app`!
 
 ---
 
-## 🛠️ Local Running & Verification
+### Option D: Hugging Face Spaces (Permanent Academic Host)
 
-To run locally anytime:
-- **Windows**: Double-click `run_project.bat`
-- **Any OS**: Run:
-  ```bash
-  python run.py
-  ```
-The app will automatically launch on `http://localhost:8000` and open your default browser.
+1. Open **[Hugging Face Spaces](https://huggingface.co/spaces)** and click **Create new Space**.
+2. Space name: `prepsense-ai`
+3. Space SDK: **Docker** (Blank)
+4. Push your repo to the Hugging Face git remote.
+5. In Space Settings ➔ **Variables and secrets**, add `GEMINI_API_KEY`.
+6. Hugging Face hosts the app permanently for free!
