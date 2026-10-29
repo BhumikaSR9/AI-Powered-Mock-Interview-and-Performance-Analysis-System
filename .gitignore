@@ -43,6 +43,8 @@ yarn-error.log*
 
 # Build
 dist/
+!frontend/dist/
+!frontend/dist/**
 build/
 *.log
 
