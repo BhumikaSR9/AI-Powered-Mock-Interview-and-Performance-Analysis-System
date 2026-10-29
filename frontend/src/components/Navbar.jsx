@@ -21,7 +21,7 @@ function Navbar({ darkMode, setDarkMode }) {
     email: '',
     password: '',
     full_name: '',
-    college: 'B.Tech Engineering College',
+    college: 'Computer Science & Engineering',
     target_role: 'Software Engineer'
   })
   const [errorMsg, setErrorMsg] = useState('')
@@ -45,7 +45,7 @@ function Navbar({ darkMode, setDarkMode }) {
           username: formData.username || formData.email.split('@')[0],
           email: formData.email,
           password: formData.password,
-          full_name: formData.full_name || 'Student Candidate',
+          full_name: formData.full_name || 'Candidate',
           college: formData.college,
           target_role: formData.target_role
         })
@@ -74,9 +74,9 @@ function Navbar({ darkMode, setDarkMode }) {
       // Offline fallback demo user
       const demoUser = {
         id: 1,
-        full_name: 'Bhumika (Student)',
+        full_name: 'Bhumika (Demo Account)',
         email: 'bhumika@example.com',
-        college: 'B.Tech Computer Science & AI/ML',
+        college: 'Computer Science & Engineering',
         target_role: 'Machine Learning Engineer',
         experience_level: 'Intermediate'
       }
@@ -116,7 +116,7 @@ function Navbar({ darkMode, setDarkMode }) {
                 </span>
               </div>
               <span className="text-[10px] text-slate-400 dark:text-slate-500 font-medium hidden sm:block -mt-0.5">
-                Autonomous Interview & Placement Engine
+                Autonomous AI Interview & Talent Intelligence Platform
               </span>
             </div>
           </Link>
@@ -241,10 +241,10 @@ function Navbar({ darkMode, setDarkMode }) {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-slate-600 dark:text-slate-350 mb-1">College / Institute</label>
+                    <label className="block text-xs font-bold text-slate-600 dark:text-slate-350 mb-1">Education / Organization</label>
                     <input
                       type="text"
-                      placeholder="e.g. B.Tech Computer Science"
+                      placeholder="e.g. Computer Science, M.S. or B.S."
                       value={formData.college}
                       onChange={(e) => setFormData({ ...formData, college: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-primary-500 outline-none"
@@ -258,7 +258,7 @@ function Navbar({ darkMode, setDarkMode }) {
                 <input
                   type="email"
                   required
-                  placeholder="student@example.com"
+                  placeholder="candidate@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-primary-500 outline-none"
@@ -286,14 +286,14 @@ function Navbar({ darkMode, setDarkMode }) {
               </button>
             </form>
 
-            {/* Quick 1-Click Demo Login for Evaluators / Viva */}
+            {/* Quick 1-Click Demo Login */}
             <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 text-center">
               <button
                 type="button"
                 onClick={handleDemoLogin}
                 className="w-full py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 font-bold text-xs cursor-pointer transition-all flex items-center justify-center gap-1.5"
               >
-                <span>⚡</span> 1-Click Demo Student Login (for Evaluation/Viva)
+                <span>⚡</span> 1-Click Instant Demo Login
               </button>
             </div>
 

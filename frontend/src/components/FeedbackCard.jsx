@@ -56,7 +56,7 @@ function FeedbackCard({ feedback, darkMode, onNext, nextButtonText }) {
               Evaluation & AI Critique
             </h3>
             <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-primary-100 dark:bg-primary-950 text-primary-600 dark:text-primary-400 border border-primary-300/40">
-              100-Mark Rubric
+              Evaluation Matrix
             </span>
           </div>
           <span className="text-xs uppercase font-extrabold tracking-wider text-slate-400">
@@ -122,7 +122,7 @@ function FeedbackCard({ feedback, darkMode, onNext, nextButtonText }) {
         {/* Sub-Score Meters (Tech 40, Comm 30, STAR 30) */}
         <div className="md:col-span-2 space-y-4 p-5 bg-slate-100/30 dark:bg-slate-900/30 border border-slate-200/40 dark:border-slate-800/40 rounded-2xl">
           <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mb-2">
-            <span>📊</span> Academic Scoring Breakdown
+            <span>📊</span> Performance Dimension Breakdown
           </h4>
 
           {/* Technical Depth */}

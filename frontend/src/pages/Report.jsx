@@ -97,7 +97,7 @@ function Report({ darkMode, setDarkMode }) {
     doc.setTextColor(255, 255, 255)
     doc.setFontSize(20)
     doc.setFont('helvetica', 'bold')
-    doc.text('PREPSENSE AI - PLACEMENT ASSESSMENT REPORT', margin, 20)
+    doc.text('PREPSENSE AI - EXECUTIVE INTERVIEW ASSESSMENT', margin, 20)
     
     doc.setFontSize(11)
     doc.setFont('helvetica', 'normal')
@@ -109,7 +109,7 @@ function Report({ darkMode, setDarkMode }) {
     // Performance Summary block
     doc.setFontSize(15)
     doc.setFont('helvetica', 'bold')
-    doc.text('100-Mark Academic Performance Matrix', margin, yPos)
+    doc.text('Performance Evaluation Matrix (100-Point Scale)', margin, yPos)
     yPos += 10
     
     const finalScore = report.score_100 || report.average_score || 0
@@ -186,7 +186,7 @@ function Report({ darkMode, setDarkMode }) {
       <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-darkBg text-slate-500">
         <div className="flex flex-col items-center gap-3">
           <div className="w-10 h-10 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
-          <span className="font-bold text-base">Assembling 100-Mark Placement Dossier...</span>
+          <span className="font-bold text-base">Generating Comprehensive Evaluation Dossier...</span>
         </div>
       </div>
     )
@@ -227,10 +227,10 @@ function Report({ darkMode, setDarkMode }) {
         <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-200/70 dark:border-slate-800/80 shadow-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
             <span className="text-xs uppercase font-extrabold tracking-widest text-slate-400 block mb-1">
-              Assessment Completed • SQLite Persisted
+              Assessment Completed • Securely Persisted
             </span>
             <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
-              Placement Readiness Analytics: <span className="text-primary-600 dark:text-primary-400">{report.role}</span>
+              Executive Interview Performance Analytics: <span className="text-primary-600 dark:text-primary-400">{report.role}</span>
             </h1>
           </div>
 
@@ -250,10 +250,10 @@ function Report({ darkMode, setDarkMode }) {
           </div>
         </div>
 
-        {/* 100-Mark Score Banner & Subscore Meters */}
+        {/* 100-Point Score Banner & Subscore Meters */}
         <div className="grid md:grid-cols-4 gap-6 items-stretch">
           
-          {/* Main 100-Mark Score Card */}
+          {/* Main 100-Point Score Card */}
           <div className="p-6 rounded-3xl glass-card flex flex-col justify-between items-center text-center">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Overall Candidate Score</span>
             <div className="relative my-2">
@@ -262,21 +262,21 @@ function Report({ darkMode, setDarkMode }) {
               }`}>
                 {finalScore}
               </span>
-              <span className="text-xs font-bold text-slate-400 block mt-1">/ 100 MARKS</span>
+              <span className="text-xs font-bold text-slate-400 block mt-1">/ 100 POINTS</span>
             </div>
             <span className={`px-3 py-1 rounded-full text-xs font-black uppercase border ${
               finalScore >= 80 
                 ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20' 
                 : 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20'
             }`}>
-              {finalScore >= 85 ? 'Grade A+ • Placement Ready' : finalScore >= 70 ? 'Grade A • Strong Candidate' : 'Grade B • Needs Practice'}
+              {finalScore >= 85 ? 'Grade A+ • Interview Ready' : finalScore >= 70 ? 'Grade A • Strong Candidate' : 'Grade B • Developing'}
             </span>
           </div>
 
           {/* 3 Sub-Score Meters */}
           <div className="md:col-span-3 p-6 sm:p-8 rounded-3xl glass-panel border border-slate-200/60 dark:border-slate-800/70 space-y-4 flex flex-col justify-center">
             <h3 className="text-sm font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
-              <span>📊</span> Sub-Score Dimension Evaluation (Viva Rubric)
+              <span>📊</span> Performance Dimension Breakdown (Industry Rubric)
             </h3>
 
             {/* Technical Depth */}

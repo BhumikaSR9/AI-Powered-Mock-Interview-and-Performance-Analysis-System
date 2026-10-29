@@ -28,9 +28,9 @@ function Landing({ darkMode, setDarkMode }) {
   const [showReviewModal, setShowReviewModal] = useState(false)
   const [reviewForm, setReviewForm] = useState({
     name: '',
-    role: 'B.Tech Graduate',
-    company: 'Placed at Tech Corp',
-    college: 'Engineering Institute',
+    role: 'Software Engineer',
+    company: 'Leading Tech Company',
+    college: 'Tech Professional',
     rating: 5,
     comment: ''
   })
@@ -156,9 +156,9 @@ function Landing({ darkMode, setDarkMode }) {
         setShowReviewModal(false)
         setReviewForm({
           name: '',
-          role: 'B.Tech Graduate',
-          company: 'Placed at Tech Corp',
-          college: 'Engineering Institute',
+          role: 'Software Engineer',
+          company: 'Leading Tech Company',
+          college: 'Tech Professional',
           rating: 5,
           comment: ''
         })
@@ -187,9 +187,9 @@ function Landing({ darkMode, setDarkMode }) {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-primary-100 dark:bg-primary-950/70 text-primary-700 dark:text-primary-300 border border-primary-200/60 dark:border-primary-800/40 shadow-sm"
           >
-            <span>🎓 B.Tech AI/ML Final Project</span>
+            <span>⚡ NEXT-GEN AI INTERVIEW PLATFORM</span>
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span>100-Mark Placement Engine</span>
+            <span>ENTERPRISE TALENT INTELLIGENCE</span>
           </motion.div>
 
           <motion.h1
@@ -210,7 +210,7 @@ function Landing({ darkMode, setDarkMode }) {
             transition={{ delay: 0.2 }}
             className="text-base sm:text-lg text-slate-600 dark:text-slate-350 leading-relaxed font-light"
           >
-            Experience dynamic voice questioning, real-time audio volume dynamics, STAR framework scoring (/100), resume roasting, and personalized revision roadmaps.
+            Experience dynamic voice questioning, real-time audio volume dynamics, STAR framework scoring (0–100 scale), resume roasting, and personalized revision roadmaps.
           </motion.p>
         </div>
 
@@ -459,20 +459,20 @@ function Landing({ darkMode, setDarkMode }) {
 
         </motion.div>
 
-        {/* 6 Key Architectural Modules (For 100-Mark Academic Presentation) */}
+        {/* 6 Core Platform Capabilities */}
         <section className="space-y-6">
           <div className="text-center">
             <h2 className="text-2xl font-black text-slate-900 dark:text-white">
-              Engineering Architecture & Evaluation Matrix
+              Enterprise AI Capabilities & Architecture
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-              Demonstrates end-to-end integration of NLP, Machine Learning, Web Speech, and Relational Databases.
+              Powered by advanced NLP, Large Language Models, real-time audio analytics, and persistent evaluation intelligence.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: '1. Intelligent Answer Evaluator', icon: '🧠', desc: 'Analyzes technical depth (/40), communication clarity (/30), and STAR structure (/30) on a strict 100-mark rubric.' },
+              { title: '1. Intelligent Answer Evaluator', icon: '🧠', desc: 'Analyzes technical depth (40%), communication clarity (30%), and STAR structure (30%) against elite industry hiring benchmarks.' },
               { title: '2. Multi-Persona Speech Synthesis', icon: '🎙️', desc: 'Web Speech API synthesis with four distinct personas: Friendly Fiona, Tech Tyler, Savage Sam, and Pressure Paula.' },
               { title: '3. Real-Time Waveform & Fillers', icon: '📊', desc: 'Captures micro-volume decibels and regex pattern-detects verbal crutches (um, like, basically) dynamically.' },
               { title: '4. Progressive In-Session Hinting', icon: '💡', desc: 'Offers progressive coaching hints during practice mode to guide candidates without spoiling ideal responses.' },
@@ -499,7 +499,7 @@ function Landing({ darkMode, setDarkMode }) {
                 </h2>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Verified feedback from engineering students placed at top tech companies
+                Verified feedback from candidates and engineers hired at top tech companies
               </p>
             </div>
 
@@ -653,7 +653,7 @@ function Landing({ darkMode, setDarkMode }) {
 
       {/* Footer */}
       <footer className="border-t border-slate-200/60 dark:border-slate-800/60 py-6 text-center text-xs text-slate-400">
-        <p>© 2026 PrepSense AI • B.Tech AI/ML Final Project • Built for 100-Mark Academic Excellence</p>
+        <p>© 2026 PrepSense AI Inc. • Autonomous Multi-Modal AI Interview & Placement Intelligence Engine • All Rights Reserved</p>
       </footer>
     </div>
   )

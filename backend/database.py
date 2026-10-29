@@ -130,8 +130,8 @@ def init_db():
             "bhumika",
             "bhumika@example.com",
             hash_password("demo123"),
-            "Bhumika (Student)",
-            "B.Tech Computer Science & AI/ML",
+            "Bhumika (Demo Account)",
+            "Computer Science & Engineering",
             "Python / Machine Learning Engineer",
             "Intermediate",
             "Python, FastAPI, Machine Learning, SQL, React"
@@ -144,9 +144,9 @@ def init_db():
         sample_reviews = [
             (
                 "Aarav Sharma",
-                "SDE-1 Placed",
+                "Software Engineer",
                 "Amazon",
-                "IIT Delhi",
+                "Tech Professional",
                 5,
                 "PrepSense AI helped me nail the behavioral and technical STAR rounds! The Savage Critic mode pointed out weak points in my answers that no human interviewer ever did.",
                 "AS"
@@ -155,27 +155,27 @@ def init_db():
                 "Priya Nair",
                 "Data Analyst",
                 "Deloitte",
-                "NIT Trichy",
+                "Analytics Specialist",
                 5,
-                "The live speech dynamics, filler word analysis, and instant ideal answers are game changing. Scored 88/100 in my actual campus placement interview!",
+                "The live speech dynamics, filler word analysis, and instant ideal answers are game changing. Scored in the top 5% in my actual technical round!",
                 "PN"
             ),
             (
                 "Rohan Verma",
                 "ML Engineer",
                 "Microsoft",
-                "BITS Pilani",
+                "AI Researcher",
                 5,
-                "The resume roast mode was hilarious but spot-on. It forced me to quantify my project outcomes with metrics. Highly recommended for final-year engineering students!",
+                "The resume roast mode was hilarious but spot-on. It forced me to quantify my engineering outcomes with metrics. Highly recommended for any candidate preparing for top-tier tech rounds!",
                 "RV"
             ),
             (
                 "Sneha Patel",
-                "Python Developer",
+                "Backend Developer",
                 "Infosys Specialist",
-                "VIT Vellore",
+                "Senior Developer",
                 5,
-                "The PDF report export is so comprehensive. I showed my practice progress chart to my placement coordinator and they were amazed.",
+                "The PDF report export is so comprehensive. The granular feedback and model answers accelerated my interview readiness 10x.",
                 "SP"
             )
         ]

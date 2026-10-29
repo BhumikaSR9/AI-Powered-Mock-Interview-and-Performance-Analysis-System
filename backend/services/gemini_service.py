@@ -451,10 +451,10 @@ class GeminiService:
             Question: {question}
             Response: {response}
 
-            Evaluate on a 100-mark academic scale:
-            - Technical Depth (0-40 marks): Concept correctness, design choices, trade-offs.
-            - Communication & Tone (0-30 marks): Articulation, confidence, conciseness.
-            - STAR Completeness (0-30 marks): Situation, Task, Action, quantifiable Result.
+            Evaluate on a rigorous 100-point industry hiring scale:
+            - Technical Depth (0-40 points): Concept correctness, design choices, trade-offs.
+            - Communication & Tone (0-30 points): Articulation, confidence, conciseness.
+            - STAR Completeness (0-30 points): Situation, Task, Action, quantifiable Result.
 
             Provide analysis as a JSON object with this exact structure:
             {{

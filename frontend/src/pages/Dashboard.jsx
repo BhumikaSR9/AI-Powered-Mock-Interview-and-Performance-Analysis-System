@@ -69,7 +69,7 @@ function Dashboard({ darkMode, setDarkMode }) {
         <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-200/70 dark:border-slate-800/80 shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-primary-600 to-indigo-600 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-primary-500/25">
-              {user ? user.full_name?.charAt(0) : '🎓'}
+              {user ? user.full_name?.charAt(0) : '👤'}
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -77,11 +77,11 @@ function Dashboard({ darkMode, setDarkMode }) {
                   {user ? user.full_name : 'Candidate Performance Dashboard'}
                 </h1>
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                  {user ? user.experience_level || 'Candidate' : 'Student Mode'}
+                  {user ? user.experience_level || 'Candidate' : 'Candidate Mode'}
                 </span>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                {user ? `${user.college} • Target: ${user.target_role}` : 'B.Tech Placement Preparation & Skill Intelligence'}
+                {user ? `${user.college} • Target: ${user.target_role}` : 'Executive Interview Preparation & Skill Intelligence'}
               </p>
             </div>
           </div>
@@ -100,7 +100,7 @@ function Dashboard({ darkMode, setDarkMode }) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {[
             { title: 'Interviews Completed', value: stats?.total_interviews || 0, subtitle: `${stats?.total_questions_answered || 0} questions answered`, icon: '🎯', color: 'text-primary-600 dark:text-primary-400' },
-            { title: 'Average Overall Score', value: `${stats?.average_score || 0} / 100`, subtitle: 'Evaluated on 100-mark scale', icon: '🏆', color: 'text-emerald-600 dark:text-emerald-400' },
+            { title: 'Average Overall Score', value: `${stats?.average_score || 0} / 100`, subtitle: 'Standardized 100-Point Index', icon: '🏆', color: 'text-emerald-600 dark:text-emerald-400' },
             { title: 'Technical Mastery', value: `${stats?.average_tech_score || 0} / 40`, subtitle: 'System design & concept depth', icon: '💻', color: 'text-indigo-600 dark:text-indigo-400' },
             { title: 'Communication & Tone', value: `${stats?.average_comm_score || 0} / 30`, subtitle: 'Confidence & filler control', icon: '🗣️', color: 'text-cyan-600 dark:text-cyan-400' }
           ].map((item, idx) => (
